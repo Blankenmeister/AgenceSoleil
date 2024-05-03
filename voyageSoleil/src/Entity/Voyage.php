@@ -7,49 +7,72 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
+#[UniqueEntity(fields: 'nom', message: 'Ce nom est déjà utilisé.')]
 #[ORM\Entity(repositoryClass: VoyageRepository::class)]
 class Voyage
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups('api_voyage_index')]
     private ?int $id = null;
 
+    
+    #[Assert\Length(min:2, max:100, minMessage: 'le nom du voyage doit comporter plus de 2 caractères', maxMessage: 'Le nom doit comporter moins de 100 caractères.')]
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\Column(length: 150)]
+    #[Groups('api_voyage_index')]
     private ?string $nom = null;
 
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\Column]
+    #[Groups('api_voyage_index')]
     private ?int $nombreVoyageur = null;
 
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
+    #[Assert\LessThan("+1 year", message: "La date de sortie ne peut dépasser {{ compared_value }}.")]
+    #[Assert\GreaterThan("today", message: "La date de sortie ne peut pas etre antérieure à aujourd'hui.")]
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups('api_voyage_index')]
     private ?\DateTimeInterface $dateDebut = null;
 
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[Groups('api_voyage_index')]
     private ?\DateTimeInterface $dateFin = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $duree = null;
-
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\Column(length: 100)]
+    #[Groups('api_voyage_index')]
     private ?string $prix = null;
 
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\ManyToOne(inversedBy: 'voyages')]
     #[ORM\JoinColumn(nullable: false)]
+    
     private ?User $user = null;
-
+    
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\ManyToOne(inversedBy: 'voyages')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups('api_voyage_index')]
     private ?Logement $logement = null;
 
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\ManyToOne(inversedBy: 'voyages')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups('api_voyage_index')]
     private ?Destination $destination = null;
 
     /**
      * @var Collection<int, Categorie>
      */
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'voyages')]
+    #[Groups('api_voyage_index')]
     private Collection $categorie;
 
     /**
@@ -58,6 +81,7 @@ class Voyage
     #[ORM\OneToMany(targetEntity: Reservation::class, mappedBy: 'voyage')]
     private Collection $reservation;
 
+  
     public function __construct()
     {
         $this->categorie = new ArrayCollection();
@@ -119,17 +143,7 @@ class Voyage
         return $this;
     }
 
-    public function getDuree(): ?\DateTimeInterface
-    {
-        return $this->duree;
-    }
-
-    public function setDuree(\DateTimeInterface $duree): static
-    {
-        $this->duree = $duree;
-
-        return $this;
-    }
+   
 
     public function getPrix(): ?string
     {
@@ -233,5 +247,6 @@ class Voyage
         return $this;
     }
 
+   
 
 }
