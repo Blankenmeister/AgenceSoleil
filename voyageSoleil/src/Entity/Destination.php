@@ -21,6 +21,7 @@ class Destination
     private ?string $nom = null;
 
     #[ORM\Column(length: 150, nullable: true)]
+    #[Groups('api_voyage_index')]
     private ?string $imageUrl = null;
 
     /**

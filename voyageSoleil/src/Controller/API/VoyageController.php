@@ -2,6 +2,7 @@
 
 namespace App\Controller\API;
 
+use App\Entity\Voyage;
 use App\Repository\VoyageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -20,7 +21,10 @@ class VoyageController extends AbstractController
 
         return $this->json($voyages, context: ['groups' => 'api_voyage_index']);
     }
+
     
+
+
 
 //     #[Route('/api/film', name: 'api_film_')]
 //     class FilmController extends AbstractController
