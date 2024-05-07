@@ -10,7 +10,6 @@ export default function Home() {
       <div className="voyage">
         <Link href="/voyages">Voyages</Link>
       </div>
-
     </>
   );
 }
