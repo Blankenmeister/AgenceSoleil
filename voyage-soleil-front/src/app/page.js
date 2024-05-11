@@ -1,15 +1,19 @@
 "use client"
 
-import Link from "next/link";
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from "@/Components/Navbar/Navbar";
+import Footer from '@/Components/Footer/Footer';
+import HomeImage from '@/Components/HomeImage/HomeImage';
 
 
 export default function Home() {
   return (
     <>
-    <h1>page d'accueil</h1>
-      <div className="voyage">
-        <Link href="/voyages">Voyages</Link>
-      </div>
+    <Navbar />
+    <HomeImage />
+    
+    <Footer />  
     </>
   );
 }

@@ -1,8 +1,15 @@
 "use client";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from "@/Components/Navbar/Navbar";
 import "./page.css";
 import VoyageList from "@/Components/voyageList/VoyageList";
 import { useEffect, useState } from "react";
+import Footer from "@/Components/Footer/Footer";
+
+
+
+
 
 
 export default function Voyages() {
@@ -30,7 +37,13 @@ export default function Voyages() {
     <main>
       {/* Affichage conditionnel en fonction de l'état du chargement et des erreurs */}
       {loading && !error && <div>Données en cours de chargement !</div>}
-      {!loading && !error && data && <VoyageList voyages={data} />}
+      {!loading && !error && data && 
+      <>
+      <Navbar />
+      <VoyageList voyages={data} />
+      <Footer />
+      </>
+      }
       {!loading && error && <div>Une erreur est survenue</div>}
     </main>
   );

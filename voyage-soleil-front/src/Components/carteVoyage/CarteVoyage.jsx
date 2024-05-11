@@ -1,5 +1,5 @@
 import "./carteVoyage.css";
-import Image from "next/image";
+
 
 export default function CarteVoyage(props) {
   return (
@@ -8,10 +8,10 @@ export default function CarteVoyage(props) {
         <p className="carteNom">{props.nom}</p>
         <p className="carteDestination">{props.destination}</p>
       </div>
-      {props.imageUrl && (
+      {props.image && (
         <img
         className="imageCarte"
-        src={'http://localhost:8000/images/' + props.imageUrl} 
+        src={'http://localhost:8000/images/' + props.image} 
         width={250}
         height={250}
         alt={"Image of " + props.nom}

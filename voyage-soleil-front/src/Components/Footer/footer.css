@@ -1,0 +1,19 @@
+.footer {
+    background-color: rgba(255, 255, 0, 0.466);
+    height: 20%;
+}
+
+.lien {
+    color: rgb(50, 49, 49);
+    
+}
+
+.lien:hover {
+    color: black;
+}
+
+.logo {
+
+    text-decoration: none;
+}
+

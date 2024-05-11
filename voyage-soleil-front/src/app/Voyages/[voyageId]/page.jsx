@@ -16,7 +16,7 @@ export default function VoyageDetail(props) {
     // Déclenchement de la récupération des données de personnages au montage du composant.
     try {
       fetch(
-        "http://127.0.0.1:8000/api/voyages" + props.params.voyage.Id
+        "http://127.0.0.1:8000/api/voyages/" + props.params.voyageId
       )
         .then((response) => response.json()) // Transformation de la réponse en JSON.
         .then((data) => {
@@ -28,7 +28,7 @@ export default function VoyageDetail(props) {
       setLoading(false); // Arrêt de l'indicateur de chargement en cas d'erreur.
     }
   }, []); // Le tableau vide indique que cet effet ne s'exécute qu'au montage.
-
+console.log(data);
   return (
     <main>
       
@@ -36,17 +36,14 @@ export default function VoyageDetail(props) {
       {loading && !error && <div>Données en cours de chargement !</div>}
       {!loading && !error && data && (
         <CarteVoyageDetail
-          nom={voyage.nom}
-          nombreVoyageur={voyage.nombreVoyageur}
-          dateDebut={voyage.dateDebut}
-          dateFin={voyage.dateFin}
-          prix={voyage.prix}
-          logement={voyage.logement.nom}
-          destination={voyage.destination.nom}
-          categorie={voyage.categorie.nom}
-        />
+          nom={data.nom}
+          
+          
+          />
       )}
       {!loading && error && <div>Une erreur est survenue</div>}
     </main>
   );
 }
+
+

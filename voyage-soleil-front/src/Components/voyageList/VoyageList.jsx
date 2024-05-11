@@ -12,7 +12,7 @@ export default function VoyageList(props) {
             {props.voyages.map((voyage, index) => (
               <Link className="link" key={index} href={"/voyages/" + voyage.id}>
                 <li>
-                  <CarteVoyage nom={voyage.nom} destination={voyage.destination.nom} imageUrl={voyage.destination.imageUrl} />
+                  <CarteVoyage nom={voyage.nom} destination={voyage.destination.nom} image={voyage.destination.imageUrl} />
                 </li>
               </Link>
             ))}
