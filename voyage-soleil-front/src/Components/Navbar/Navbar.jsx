@@ -3,12 +3,11 @@ import "./navbar.css";
 import Image from "next/image";
 
 
-
 export default function Navbar() {
 
     return(
         
-    <nav className="navbar navbar navbar-expand-lg px-3">
+    <nav className="navbar navbar-expand-lg px-3">
         <div className="d-flex justify-content-between w-100">
             <Link className="navbar navbar-brand fs-2 fw-normal" href="/">
                 <Image
@@ -29,7 +28,7 @@ export default function Navbar() {
         <div className="collapse navbar-collapse flex-grow-0" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" href="#">Accueil</Link>
+              <Link className="nav-link" href="/">Accueil</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" href="/voyages">Nos voyages</Link>

@@ -14,17 +14,21 @@ export default function CarteVoyageDetail(props) {
       {props.image && (
         <img
           className="carteImage"
-          width={250}
-          height={250}
+          width={300}
+          // height={250}
           src={'http://localhost:8000/images/' + props.image} 
           alt={"Image de " + props.nom}
         />
       )}
       <div className="voyageDetailInfo">
-        <p className="voyageNom">{props.nom}</p>
-        <p className="voyagePrix">{props.prix}</p>
-        <p className="voyagePrix">{props.dateDebut}</p>
-        <p className="voyagePrix">{props.logement}</p>
+        <p className="fs-2 voyageNom">{props.nom}</p>
+        <p className="mt-2 fw-bold voyageDestination">Ville : {props.destination}</p>
+        <p className="m-0 voyageDateDebut">Du {props.dateDebut}</p>
+        <p className="voyageFin">au {props.dateFin}</p>
+        <p className="fw-bold voyageLogement">Logement : {props.logement}</p>
+        <p className="fw-bold voyagePrix">{props.prix}</p>
+        <p className="voyageCategorie">Catégories : {props.categorie}</p>
+        {/* {props.categorie && props.categorie.map((cat)=>{return(<p>{cat.nom}</p>)})} */}
       </div>
     </div>
     </>

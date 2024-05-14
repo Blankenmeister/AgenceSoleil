@@ -1,6 +1,6 @@
 "use client";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Footer from "@/Components/Footer/Footer";
 import Navbar from "@/Components/Navbar/Navbar";
 import CarteVoyageDetail from "@/Components/carteVoyageDetail/CarteVoyageDetail";
@@ -40,17 +40,15 @@ console.log(travelDdata);
       {loading && !error && <div>Données en cours de chargement !</div>}
       {!loading && !error && travelDdata && (
         <>
-        
         <CarteVoyageDetail
           nom={searchParams.nom}
-          // dateDebut={searchParams.dateDebut}
-          // dateFin={searchParams.dateFin}
-          
           image={searchParams.image}
+          logement={searchParams.logement}
           prix={searchParams.prix}
           dateDebut={searchParams.dateDebut}
-          logement={searchParams.logement}
-          
+          dateFin={searchParams.dateFin}
+          destination={searchParams.destination}
+          categorie={searchParams.categorie}
           />
         <Footer />
         </>

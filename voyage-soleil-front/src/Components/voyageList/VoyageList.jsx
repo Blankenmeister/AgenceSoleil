@@ -12,15 +12,19 @@ export default function VoyageList(props) {
             {props.voyages.map((voyage, index) => (
                  <Link className="text-reset"
                  href={{
-                   pathname: `/voyages/${voyage.id}}`,
+                   pathname:`/voyages/${voyage.id}}`,
                    query: {
                      nom: voyage.nom,
                      destination: voyage.destination.nom,
+                     logement: voyage.logement.nom,
                      image: voyage.destination.imageUrl,
                      prix: voyage.prix,
                      dateDebut: voyage.dateDebut,
-                     logement: voyage.destination.logement
+                     dateFin: voyage.dateFin,
+                     categorie: voyage.categorie.map(c => c.nom).join(', ')
+
                    }
+                   
                  }}
                >
                 <li>
@@ -54,8 +58,7 @@ export default function VoyageList(props) {
 //                         {
 //                             voyage.categorie.length >  0 &&  voyage.categorie.map((categorie)=>{
 //                                 return(
-//                                     <p>{
-//                                     categorie.nom}</p>
+//                                     <p>{categorie.nom}</p>
 //                                 )
 //                             })
 //                         }

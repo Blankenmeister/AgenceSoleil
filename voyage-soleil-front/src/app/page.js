@@ -1,10 +1,9 @@
 "use client"
 
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "@/Components/Navbar/Navbar";
 import Footer from '@/Components/Footer/Footer';
 import HomeImage from '@/Components/HomeImage/HomeImage';
+
 
 
 export default function Home() {

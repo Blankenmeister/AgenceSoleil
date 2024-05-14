@@ -5,26 +5,25 @@
     width: max-content;
     height: max-content;
     border: 1px solid lightgrey;
-    
     padding: 20px;
     margin: 0 auto;
 
     .voyageDetailInfo {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        
 
         .voyageNom {
-            margin: 0;
-            padding: 0;
             width: 250px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
             font-weight: bold;
-            font-size: 30px;
         }
 
-        
+        .voyageCategorie {
+            font-size: 14px;
+        }
     }
 }
+
