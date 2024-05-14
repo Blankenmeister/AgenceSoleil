@@ -1,43 +1,38 @@
 .imgBanner {
     width: 100%;
-    /* height: 400px; */
-}
-
-h1 {
-    position: absolute;
-    margin-left: 90px;
-    margin-top: 90px;
-    font-size: 500%;
-    font-weight: bold;
-    color:cornflowerblue
-}
-
-.contenair1 {
-    position: absolute;
-    margin-left: 90px;
-    margin-top: 90px;
-    background-color: whitesmoke;
-    opacity: 70%;
-    width: 22%;
-    height: 80px;
+    
     
 }
 
-.contenair2 {
-    position: absolute;
-    margin-left: 90px;
-    margin-top: 175px;
-    background-color: whitesmoke;
-    opacity: 70%;
-    width: 33%;
-    height: 80px;
+
+
+h1 {
+    position: relative;
+    color: cornflowerblue;
+    left: 90px;
+    top: 200px;
+    border-radius: 2px;
+    background-color: white;
+    opacity: 80%;
+    width: max-content;
+    padding: 20px;
+    font-size: 300%;
+    font-weight: bold;
+    border: 1px solid white;
+    
 }
 
-.lienBtn {
-    position: absolute;
-    margin-left: 90px;
-    margin-top: 280px;
+
+.btn {
+    position: relative;
+    left: 90px;
+    top: 240px;
     background-color: cornflowerblue;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px white;
+    /* border-radius: 5px; */
+    box-shadow: 0px 0px 5px white;
+
+}
+
+.btn:hover {
+    color:azure;
 }

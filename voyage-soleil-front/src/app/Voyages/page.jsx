@@ -40,6 +40,7 @@ export default function Voyages() {
       {!loading && !error && data && 
       <>
       <Navbar />
+      <h3 className='m-5 text-uppercase fw-bold'>Découvrez nos voyages</h3>
       <VoyageList voyages={data} />
       <Footer />
       </>

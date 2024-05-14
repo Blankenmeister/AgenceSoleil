@@ -4,13 +4,13 @@ import "./footer.css";
 export default function Footer() {
 
     return (
-        <div className="footer mb-5 pt-2">
-            <Link className="logo pt-3 px-3 d-flex justify-content align-items-center text-dark fw-bold" href="/">
+        <div className="footer pt-2">
+            <Link className="text-decoration-none pt-3 px-3 d-flex justify-content align-items-center text-dark fw-bold" href="/">
                 <img
                 className="mx-2 d-inline-block align-text-top"
                 width={30}
                 height={30}
-                src={'image/logo.svg'} 
+                src={'/image/logo.svg'} 
                 alt={"Image de "}
             />VOYAGE SOLEIL
             </Link>

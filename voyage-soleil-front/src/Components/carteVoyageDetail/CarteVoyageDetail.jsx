@@ -4,10 +4,13 @@
 import "./carteVoyageDetail.css";
 
 export default function CarteVoyageDetail(props) {
-  console.log(props); // Bon pour déboguer et voir ce que contiennent les props.
+  console.log("component ", props); // Bon pour déboguer et voir ce que contiennent les props.
 
   return (
-    <div className="carteVoyageDetail">
+
+  <>
+  
+    <div className="mt-5 mb-5 carteVoyageDetail">
       {props.image && (
         <img
           className="carteImage"
@@ -19,9 +22,11 @@ export default function CarteVoyageDetail(props) {
       )}
       <div className="voyageDetailInfo">
         <p className="voyageNom">{props.nom}</p>
-        
-        
+        <p className="voyagePrix">{props.prix}</p>
+        <p className="voyagePrix">{props.dateDebut}</p>
+        <p className="voyagePrix">{props.logement}</p>
       </div>
     </div>
+    </>
   );
 }

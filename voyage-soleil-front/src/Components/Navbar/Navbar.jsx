@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "./navbar.css";
+import Image from "next/image";
 
 
 
@@ -7,14 +8,14 @@ export default function Navbar() {
 
     return(
         
-    <nav className="navbar mb-5 navbar navbar-expand-lg px-3">
+    <nav className="navbar navbar navbar-expand-lg px-3">
         <div className="d-flex justify-content-between w-100">
-            <Link className="navbar navbar-brand fw-bold" href="/">
-                <img
+            <Link className="navbar navbar-brand fs-2 fw-normal" href="/">
+                <Image
                 className="mx-2 d-inline-block align-text-top"
                 width={50}
                 height={50}
-                src={'image/logo.svg'} 
+                src='/image/logo.svg'
                 alt={"Image de "}
        
             />VOYAGE SOLEIL

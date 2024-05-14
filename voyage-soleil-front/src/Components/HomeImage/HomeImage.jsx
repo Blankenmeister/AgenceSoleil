@@ -5,17 +5,12 @@ import "./homeImage.css";
 export default function HomeImage() {
     return (
         <>
-    <div className="contenair1"></div>
-    <div className="contenair2"></div>
-        <h1>BESOIN <br />
-            DE SOLEIL?</h1>
-            <Link className="lienBtn" href="/voyages">
-        <button className="btn text-white">Nos voyages</button>
-        </Link>
-            
-            
+        <h1>BESOIN DE SOLEIL?</h1>
+     
+        <Link href="/voyages" className="btn text-white">Nos voyages</Link>
+        
         <div className="banner">
-            <img className="imgBanner"
+            <img className="mb-5 imgBanner"
             src={"image/home1.jpg"}
             alt={"Image d'une plage"}
         />

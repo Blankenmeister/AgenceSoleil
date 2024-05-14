@@ -5,7 +5,6 @@
     width: max-content;
     height: max-content;
     border: 1px solid lightgrey;
-    
     padding: 20px;
 
     .carteInfo {
@@ -13,21 +12,22 @@
         flex-direction: column;
         gap: 10px;
 
-        .carteNom {
-            margin: 0;
-            padding: 0;
-            width: 250px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-weight: bold;
-            font-size: 28px;
-        }
-
         .carteDestination {
             margin: 0;
             padding: 0;
             font-size: 24px;
         }
     }
+}
+
+
+.carteNom {
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 28px;
 }
