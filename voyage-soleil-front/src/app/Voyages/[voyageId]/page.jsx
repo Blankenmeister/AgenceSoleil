@@ -2,6 +2,7 @@
 
 
 import Footer from "@/Components/Footer/Footer";
+import FormReservation from "@/Components/FormReservation/FormReservation";
 import Navbar from "@/Components/Navbar/Navbar";
 import CarteVoyageDetail from "@/Components/carteVoyageDetail/CarteVoyageDetail";
 import { useEffect, useState } from "react";
@@ -50,6 +51,7 @@ console.log(travelDdata);
           destination={searchParams.destination}
           categorie={searchParams.categorie}
           />
+          <FormReservation />
         <Footer />
         </>
       )}
