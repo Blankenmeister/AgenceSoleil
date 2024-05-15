@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\ReservationRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ReservationRepository::class)]
 class Reservation
@@ -15,23 +17,36 @@ class Reservation
     private ?int $id = null;
 
     #[ORM\Column(length: 150)]
+    #[Assert\Length(min:2, max:100, minMessage: 'le nom du voyage doit comporter plus de 2 caractères', maxMessage: 'Le nom doit comporter moins de 100 caractères.')]
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
+    #[Groups('api_reservation_new')]
     private ?string $nom = null;
 
     #[ORM\Column(length: 150)]
+    #[Assert\Length(min:2, max:100, minMessage: 'le nom du voyage doit comporter plus de 2 caractères', maxMessage: 'Le nom doit comporter moins de 100 caractères.')]
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
+    #[Groups('api_reservation_new')]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
+    #[Groups('api_reservation_new')]
     private ?string $email = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups('api_reservation_new')]
+    #[Assert\Length(min:2, max:500, minMessage: 'le nom du voyage doit comporter plus de 2 caractères', maxMessage: 'Le nom doit comporter moins de 500 caractères.')]
+    #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     private ?string $message = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservation')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups('api_reservation_new')]
     private ?Voyage $voyage = null;
 
     #[ORM\ManyToOne(inversedBy: 'reservations')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups('api_reservation_new')]
     private ?Statut $statut = null;
 
 

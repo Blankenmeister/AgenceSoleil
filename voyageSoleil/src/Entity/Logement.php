@@ -17,7 +17,7 @@ class Logement
     private ?int $id = null;
 
     #[ORM\Column(length: 150)]
-    #[Groups('api_voyage_index')]
+    #[Groups('api_voyage_index', 'api_voyage_nom')]
     private ?string $nom = null;
 
     /**

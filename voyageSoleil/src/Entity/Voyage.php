@@ -18,36 +18,36 @@ class Voyage
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups('api_voyage_index')]
+    #[Groups('api_voyage_index', 'api_voyage_nom')]
     private ?int $id = null;
 
     
     #[Assert\Length(min:2, max:100, minMessage: 'le nom du voyage doit comporter plus de 2 caractères', maxMessage: 'Le nom doit comporter moins de 100 caractères.')]
     #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\Column(length: 150)]
-    #[Groups('api_voyage_index')]
+    #[Groups('api_voyage_index', 'api_voyage_nom')]
     private ?string $nom = null;
 
     #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\Column]
-    #[Groups('api_voyage_index')]
+    #[Groups('api_voyage_index', 'api_voyage_nom')]
     private ?int $nombreVoyageur = null;
 
     #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[Assert\LessThan("+1 year", message: "La date de sortie ne peut dépasser {{ compared_value }}.")]
     #[Assert\GreaterThan("today", message: "La date de sortie ne peut pas etre antérieure à aujourd'hui.")]
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Groups('api_voyage_index')]
+    #[Groups('api_voyage_index', 'api_voyage_nom')]
     private ?\DateTimeInterface $dateDebut = null;
 
     #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    #[Groups('api_voyage_index')]
+    #[Groups('api_voyage_index', 'api_voyage_nom')]
     private ?\DateTimeInterface $dateFin = null;
 
     #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\Column(length: 100)]
-    #[Groups('api_voyage_index')]
+    #[Groups('api_voyage_index', 'api_voyage_nom')]
     private ?string $prix = null;
 
     #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
@@ -59,20 +59,20 @@ class Voyage
     #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\ManyToOne(inversedBy: 'voyages')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups('api_voyage_index')]
+    #[Groups('api_voyage_index', 'api_voyage_nom')]
     private ?Logement $logement = null;
 
     #[Assert\NotBlank(message: 'Le champs ne peut pas être vide')]
     #[ORM\ManyToOne(inversedBy: 'voyages')]
     #[ORM\JoinColumn(nullable: false)]
-    #[Groups('api_voyage_index')]
+    #[Groups('api_voyage_index', 'api_voyage_nom')]
     private ?Destination $destination = null;
 
     /**
      * @var Collection<int, Categorie>
      */
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'voyages')]
-    #[Groups('api_voyage_index')]
+    #[Groups('api_voyage_index', 'api_voyage_nom')]
     private Collection $categorie;
 
     /**

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import "./navbar.css";
 import Image from "next/image";
-
+import { Dropdown } from "react-bootstrap";
+import { Collapse } from "bootstrap";
 
 export default function Navbar() {
 
@@ -28,7 +29,7 @@ export default function Navbar() {
         <div className="collapse navbar-collapse flex-grow-0" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" href="/">Accueil</Link>
+              <Link className="nav-link active" href="/">Accueil</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" href="/voyages">Nos voyages</Link>

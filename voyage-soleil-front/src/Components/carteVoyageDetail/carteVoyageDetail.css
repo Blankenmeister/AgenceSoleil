@@ -1,29 +1,23 @@
 .carteVoyageDetail {
     display: flex;
     flex-direction: row;
-    gap: 30px;
-    width: max-content;
-    height: max-content;
-    border: 1px solid lightgrey;
-    padding: 20px;
-    margin: 0 auto;
+    flex-wrap: wrap;
+    /* gap: 30px; */
+    /* width: max-content;
+    height: max-content; */
+    /* border: 1px solid lightgrey; */
+    /* padding: 20px; */
+    /* margin: 0 auto;  */
 
-    .voyageDetailInfo {
-        display: flex;
-        flex-direction: column;
-        
+} 
 
-        .voyageNom {
-            width: 250px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-weight: bold;
-        }
 
-        .voyageCategorie {
-            font-size: 14px;
-        }
-    }
+/* .voyageDetailInfo {
+    display: flex;
+    flex-direction: column;
+
+}  */
+
+.carteImage {
+    width: 40%;
 }
-
