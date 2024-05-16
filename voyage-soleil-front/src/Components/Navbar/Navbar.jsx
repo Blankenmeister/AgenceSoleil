@@ -29,7 +29,7 @@ export default function Navbar() {
         <div className="collapse navbar-collapse flex-grow-0" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link active" href="/">Accueil</Link>
+              <Link className="nav-link" href="/">Accueil</Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" href="/voyages">Nos voyages</Link>
