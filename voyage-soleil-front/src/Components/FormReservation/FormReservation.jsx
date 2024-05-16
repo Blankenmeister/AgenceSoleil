@@ -1,42 +1,78 @@
 
 
-export default function FormReservation() {
+export default function FormReservation(props) {
 
 
 
 const envoyer = async (event) => {
-  
   event.preventDefault();
 
   let nom = document.getElementById('nom').value;
-
-  let tableauData = [
-    nom
-  ]
+  let prenom = document.getElementById('prenom').value;
+  let email = document.getElementById('email').value;
+  let message = document.getElementById('message').value;
 
 try {
+
   const response = await fetch('http://127.0.0.1:8000/api/reservation/new', {
     method : 'POST',
     headers: {
-      'Content-Type': 'application/json'
+    'Content-Type': 'application/json'
     },
-    body : JSON.stringify(tableauData)
-  });
 
+    body : JSON.stringify({
+      nom: nom,
+      prenom: prenom,
+      email: email,
+      message: message,
+      voyage_id: `${props.voyageId}`}),});
 
-if (response.ok) {
-  const data = await response.json();
-  console.log('coucou');
-  
-} else {
-  console.log('erreur');
-}
+      if (response.ok) {
+        const data = await response.json();
+        // redirect('/login')
+        // navigate.push('/');
+        // setReussiteMessage("Le message a bien été envoyé");
+      } else if (response.status === 422) {
+        const errorData = await response.json();
+        // setErrorMessage(errorData.error);
+      } else {
+        throw new Error("Erreur lors de la soumission du formulaire");
+      }
+      } catch (error) {
+      console.error("Erreur lors de l'envoi des données:", error);
+      // setErrorMessage("Une erreur est survenue lors de l'envoi du formulaire.");
+      }
+      };
 
-}
-catch {
-  console.log('erreur');
-}
-};
+// const response = await fetch(
+//   // "https://simplondevgrenoble.nohost.me/elodiel/agenceVoyage/public/api/contactResa/new/" + props.data.nom,
+//   "http://127.0.0.1:8000/api/contactResa/new/" + props.data.nom,
+//   {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(formData),
+//   }
+// );
+
+// if (response.ok) {
+//   const data = await response.json();
+//   // redirect('/login')
+//   // navigate.push('/');
+//   setReussiteMessage("Le message a bien été envoyé");
+// } else if (response.status === 422) {
+//   const errorData = await response.json();
+//   setErrorMessage(errorData.error);
+// } else {
+//   throw new Error("Erreur lors de la soumission du formulaire");
+// }
+// } catch (error) {
+// console.error("Erreur lors de l'envoi des données:", error);
+// setErrorMessage("Une erreur est survenue lors de l'envoi du formulaire.");
+// }
+// };
+
 
     return (
     <>

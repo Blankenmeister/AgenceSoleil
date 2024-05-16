@@ -102,7 +102,7 @@ export default function VoyageDetail(props) {
           dateFin={data.dateFin}
           categories={data.categorie}
         />
-        <FormReservation />
+        <FormReservation data={data} voyageId={data.id}/>
         <Footer />
         </>
       )}

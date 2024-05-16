@@ -95,6 +95,8 @@ class Voyage
         return $this->id;
     }
 
+    
+
     public function getNom(): ?string
     {
         return $this->nom;

@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-#[IsGranted('ROLE_ADMIN')]
+#[IsGranted('ROLE_USER')]
 #[Route('/voyage')]
 class VoyageController extends AbstractController
 {
@@ -47,7 +47,7 @@ class VoyageController extends AbstractController
     }
 
 
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_USER')]
     #[Route('/{id}', name: 'app_voyage_show', methods: ['GET'])]
     public function show(Voyage $voyage): Response
     {
@@ -57,7 +57,7 @@ class VoyageController extends AbstractController
     }
 
 
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_USER')]
     #[Route('/{id}/edit', name: 'app_voyage_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Voyage $voyage, EntityManagerInterface $entityManager): Response
     {
@@ -77,7 +77,7 @@ class VoyageController extends AbstractController
     }
 
 
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_USER')]
     #[Route('/{id}', name: 'app_voyage_delete', methods: ['POST'])]
     public function delete(Request $request, Voyage $voyage, EntityManagerInterface $entityManager): Response
     {
