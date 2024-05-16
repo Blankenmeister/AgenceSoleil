@@ -15,16 +15,15 @@ La mise en ligne sera documentée.
 Le projet sera conçu en déploiement continu, c'est-à-dire qu'à chaque mise à jour   fonctionnelle majeure, une mise en production sera effectuée, afin de toujours vérifier au fur et à mesure du développement que tout fonctionne.  
 Le développement itératif vous permettra de prendre en compte les modifications à faire suite à des bugs détectés en prod, et d'éviter ainsi de tout planter le dernier jour.    
 ​
-## PREREQUIS
+### PREREQUIS
 **Il est nécessaire d'installer au préallable:**  
 Symfony 7.0.7  
 Next.js 14.2.3  
 PHP 8.3.6     
 MySQL 8.2.0  
 
-
 ### INSTALLATION EN LOCAL
-1 Cloner ce dépôt : git clone https://github.com/Blankenmeister/AgenceSoleil    
+1 - Cloner ce dépôt : git clone https://github.com/Blankenmeister/AgenceSoleil    
  
 **Démarrage des serveurs:**  
 **Rappel de la commande pour Symfony:**  
@@ -38,22 +37,22 @@ npm run dev
 Visitez http://localhost:3000 pour voir l'application en action.  
 
 **Symfony:**  
-2 Lancer le serveur PHP (local via wamp)  
-3 Créer une base de données MySQL dans phpMyAdmin   
-4 Créer un fichier ".env.local" à la racine du projet symfony  
-5 Copier le contenu du ".env" dans ".env.local" et remplacer les bonnes informations pour la base de données.  
+2 - Lancer le serveur PHP (local via wamp)  
+3 - Créer une base de données MySQL dans phpMyAdmin   
+4 - Créer un fichier ".env.local" à la racine du projet symfony  
+5 - Copier le contenu du ".env" dans ".env.local" et remplacer les bonnes informations pour la base de données.  
 
 **Exemple:**  
-6 Décommenter cette ligne et remplacer le "app" par votre identifiant et "!ChangeMe!" par votre mot de passe.  
+6 - Décommenter cette ligne et remplacer le "app" par votre identifiant et "!ChangeMe!" par votre mot de passe.
 Commenter les autres lignes relative à la base de données.  
 
-**DATABASE_URL="mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=8.0.32&charset=utf8mb4"**  
+**DATABASE_URL="mysql://app:!ChangeMe!@127.0.0.1:3306/app?serverVersion=8.0.32 charset=utf8mb4"**  
 
 **Lancez les migrations pour créer la base de données:**  
 symfony console doctrine:migrations:migrate  
  
 
-### VERSIONS
+**VERSIONS**
 Le programme a été conçu avec:    
 Symfony 7.0.7  
 Next.js 14.2.3  
