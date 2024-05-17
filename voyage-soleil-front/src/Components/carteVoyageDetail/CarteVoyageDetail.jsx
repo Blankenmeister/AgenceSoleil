@@ -1,26 +1,19 @@
 "use client";
 
-
 import "./carteVoyageDetail.css";
 
 export default function CarteVoyageDetail(props) {
-  console.log("component ", props); // Bon pour déboguer et voir ce que contiennent les props.
 
   return (
-
   <>
-  
     <div className="m-5 carteVoyageDetail">
       {props.image && (
         <img
           className="carteImage"
-          // width={300}
-          // // height={250}
           src={'http://localhost:8000/images/' + props.image} 
           alt={"Image de " + props.nom}
         />
       )}
-      
       <div className="m-5 voyageDetailInfo">
         <p className="fs-3 voyageNom">{props.nom}</p>
         <p className="mt-2 fw-bold voyageDestination">Ville : {props.destination}</p>
@@ -32,9 +25,8 @@ export default function CarteVoyageDetail(props) {
 
         {props.categories && props.categories.map((categorie, index) => (
                                 <p key={index}>{categorie.nom}</p>
-
         ))}
-</div>
+      </div>
     </div>
     </>
   );

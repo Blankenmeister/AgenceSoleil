@@ -39,7 +39,6 @@ class Statut
     }
 
     
-
     public function getId(): ?int
     {
         return $this->id;
@@ -117,5 +116,4 @@ class Statut
         return $this;
     }
 
-   
 }

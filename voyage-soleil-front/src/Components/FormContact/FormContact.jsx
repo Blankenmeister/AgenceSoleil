@@ -3,9 +3,8 @@
 export default function FormContact() {
   return (
     <>
-      
-        <h3 className="m-5 contact fw-bold">Contactez-nous</h3>
-     
+      <h3 className="m-5 contact fw-bold">Contactez-nous</h3>
+    
       <div className="container m-5">
         
         <form>

@@ -39,7 +39,7 @@ Visitez http://localhost:3000 pour voir l'application en action.
 **Symfony:**  
 2 - Lancer le serveur PHP (local via wamp)  
 3 - Créer une base de données MySQL dans phpMyAdmin   
-4 - Créer un fichier ".env.local" à la racine du projet symfony  
+4 - Créer un fichier ".env.local" à la racine du projet symfony   
 5 - Copier le contenu du ".env" dans ".env.local" et remplacer les bonnes informations pour la base de données.  
 
 **Exemple:**  
@@ -51,8 +51,14 @@ Commenter les autres lignes relative à la base de données.
 **Lancez les migrations pour créer la base de données:**  
 symfony console doctrine:migrations:migrate  
  
+# ROUTE API  
 
-**VERSIONS**
+- `/api/voyage` - GET - Renvoie les données de tous les voyages.  
+- `/api/voyage/{nom}` - GET - Renvoie les données spécifique pour un voyage par le nom.  
+- `/api/reservation/new` - POST - Renvoie les données du formulaire de réservation en base de données.  
+
+
+**VERSIONS**  
 Le programme a été conçu avec:    
 Symfony 7.0.7  
 Next.js 14.2.3  

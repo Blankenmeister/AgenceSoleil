@@ -14,7 +14,6 @@
     
 }
 
-
 .carteNom {
     margin: 0;
     padding: 0;
@@ -23,11 +22,11 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .carteDestination {
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: 18px;
 }

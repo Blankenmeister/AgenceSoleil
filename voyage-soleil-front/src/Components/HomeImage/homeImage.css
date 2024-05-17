@@ -1,39 +1,13 @@
 .imgBanner {
     width: 100%;
-    position: relative;
 }
 .banner {
-    /* position: relative; */
     width: 100%;
 }
 
 h1 {
-    position: absolute;
     color: cornflowerblue;
-    left: 40px;
-    top: 200px;
-    border-radius: 2px;
-    background-color: white;
-    opacity: 70%;
-    width: 40%;
-    padding: 10px;
-    /* font-size: 300%; */
     font-weight: bold;
-    border: 1px solid white;
-    
 }
 
 
-.btnVoyage {
-    position: absolute;
-    left: 40px;
-    top: 300px;
-    background-color: cornflowerblue;
-    /* border-radius: 5px; */
-    box-shadow: 0px 0px 5px white;
-
-}
-
-.btn:hover {
-    color:rgb(197, 123, 13);
-}

@@ -29,8 +29,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        </div>
-
-        </div>
-    );
+      </div>
+    </div>
+  );
 }

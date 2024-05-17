@@ -1,8 +1,5 @@
 
-
 export default function FormReservation(props) {
-
-
 
 const envoyer = async (event) => {
   event.preventDefault();
@@ -13,13 +10,11 @@ const envoyer = async (event) => {
   let message = document.getElementById('message').value;
 
 try {
-
   const response = await fetch('http://127.0.0.1:8000/api/reservation/new', {
     method : 'POST',
     headers: {
     'Content-Type': 'application/json'
     },
-
     body : JSON.stringify({
       nom: nom,
       prenom: prenom,
@@ -29,58 +24,23 @@ try {
 
       if (response.ok) {
         const data = await response.json();
-        // redirect('/login')
-        // navigate.push('/');
-        // setReussiteMessage("Le message a bien été envoyé");
+
       } else if (response.status === 422) {
         const errorData = await response.json();
-        // setErrorMessage(errorData.error);
+
       } else {
         throw new Error("Erreur lors de la soumission du formulaire");
       }
       } catch (error) {
       console.error("Erreur lors de l'envoi des données:", error);
-      // setErrorMessage("Une erreur est survenue lors de l'envoi du formulaire.");
       }
       };
 
-// const response = await fetch(
-//   // "https://simplondevgrenoble.nohost.me/elodiel/agenceVoyage/public/api/contactResa/new/" + props.data.nom,
-//   "http://127.0.0.1:8000/api/contactResa/new/" + props.data.nom,
-//   {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(formData),
-//   }
-// );
-
-// if (response.ok) {
-//   const data = await response.json();
-//   // redirect('/login')
-//   // navigate.push('/');
-//   setReussiteMessage("Le message a bien été envoyé");
-// } else if (response.status === 422) {
-//   const errorData = await response.json();
-//   setErrorMessage(errorData.error);
-// } else {
-//   throw new Error("Erreur lors de la soumission du formulaire");
-// }
-// } catch (error) {
-// console.error("Erreur lors de l'envoi des données:", error);
-// setErrorMessage("Une erreur est survenue lors de l'envoi du formulaire.");
-// }
-// };
-
-
     return (
     <>
-    
-        
           <h3 className="m-5 resa fw-bold">Formulaire de réservation</h3>
        
-        <div className="container m-5 px-0">
+        <div className="container m-5 px-0 ">
           
           <form onSubmit={envoyer} method="POST">
             <div className="mb-3">
@@ -105,17 +65,8 @@ try {
             </div>
             <button type="submit" className="btnContact btn btn-secondary">Submit</button>
           </form>
-        </div>
-        
-        
-
-
-    
-</>
-
-
+        </div>  
+      </>
     );
-
-
   }
   

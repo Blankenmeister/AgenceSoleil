@@ -29,17 +29,4 @@ class VoyageController extends AbstractController
         return $this->json($voyage, context: ['groups' => 'api_voyage_index', 'api_voyage_nom']);
     }
 
-
-
-//     #[Route('/api/film', name: 'api_film_')]
-//     class FilmController extends AbstractController
-// {
-//     #[Route('s', name: 'index')]
-//     public function index(FilmRepository $filmRepository): Response
-//     {
-//         $films = $filmRepository->findAll();
-
-//         return $this->json($films, context: ['groups' => 'api_film_index']); 
-// // en json on peut pas donner les catégories en relation de la table film
-//     }
 }

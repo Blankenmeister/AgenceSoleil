@@ -21,14 +21,12 @@ class ReservationController extends AbstractController
     #[Route('s', name: 'index')]
     public function index(ReservationRepository $reservationRepository): Response
     {
-
         $reservations = $reservationRepository->findAll();
         
         return $this->json(data: $reservations, context: ['groups' => 'api_reservation_index']);
     }
 
 
-    
     #[Route('/new', name: 'new', methods:['POST', 'GET'])]
     public function new(Request $request, EntityManagerInterface $em, SerializerInterface $serializer, ValidatorInterface $validator): Response
     {
@@ -37,17 +35,14 @@ class ReservationController extends AbstractController
         $requestedTravelData = json_decode($request->getContent());
         $requestedTravelId = intval($requestedTravelData->voyage_id);
 
-        
         $travelRepo = $em->getRepository(Voyage::class);
         $requestedTravel = $travelRepo->find($requestedTravelId);
         
         $StatutRepo = $em->getRepository(Statut::class);
         $requestedStatut = $StatutRepo->find(1);
 
-
         $reservation->setVoyage($requestedTravel);
         $reservation->setStatut($requestedStatut);
-
 
         $errors = $validator->validate($reservation);
 
@@ -66,7 +61,6 @@ class ReservationController extends AbstractController
 
             return $this->json(null, Response::HTTP_CREATED);
         }
-
     }
 }
 

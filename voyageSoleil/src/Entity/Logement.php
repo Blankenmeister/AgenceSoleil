@@ -32,7 +32,6 @@ class Logement
     }
 
 
-
     public function getId(): ?int
     {
         return $this->id;
