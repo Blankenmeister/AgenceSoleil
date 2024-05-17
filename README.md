@@ -51,7 +51,7 @@ Commenter les autres lignes relative à la base de données.
 **Lancez les migrations pour créer la base de données:**  
 symfony console doctrine:migrations:migrate  
  
-# ROUTE API  
+### ROUTE API  
 
 - `/api/voyage` - GET - Renvoie les données de tous les voyages.  
 - `/api/voyage/{nom}` - GET - Renvoie les données spécifique pour un voyage par le nom.  
